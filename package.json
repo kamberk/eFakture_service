@@ -1,0 +1,24 @@
+{
+  "name": "middleware",
+  "version": "1.0.0",
+  "description": "middleware za eFakture",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "nexe -r views/**/*"
+  },
+  "author": "Kamber",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "express-xml-bodyparser": "^0.3.0",
+    "https": "^1.0.0",
+    "nexe": "^4.0.0-rc.1",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6",
+    "xml2js": "^0.4.23"
+  }
+}
