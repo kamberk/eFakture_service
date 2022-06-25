@@ -2,7 +2,7 @@ const axios = require('axios');
 
 const primiZahtev = async(req, res) => {
     // Izvlacenje JSON podataka iz req.body neophodnih za slanje na servis Moj-eRacun
-    const {Username, Password, CompanyId, SoftwareId, File} = req.body;
+    const {Username, Password, CompanyId, SoftwareId, SendToCir ,File} = req.body;
     // Preuzimanje api kljuca iz header-a (ako je neophodno)
     const Api = JSON.stringify(req.headers['apikey']);
 
@@ -16,7 +16,8 @@ const primiZahtev = async(req, res) => {
             Username: Username, 
             Password: Password, 
             CompanyId: CompanyId, 
-            SoftwareId: SoftwareId, 
+            SoftwareId: SoftwareId,
+            SendToCir: SendToCir, 
             File: File}, {
             headers: {
             'Content-Type':'application/json',
@@ -44,7 +45,7 @@ const primiZahtev = async(req, res) => {
 
 // link za slanje demo faktura, koristi se za testiranje
 const demoZahtev = async(req, res) => {
-    const {Username, Password, CompanyId, SoftwareId, File} = req.body;
+    const {Username, Password, CompanyId, SoftwareId, SendToCir, File} = req.body;
     const Api = JSON.stringify(req.headers['apikey']);
 
     try {
@@ -53,7 +54,8 @@ const demoZahtev = async(req, res) => {
             Username: Username, 
             Password: Password, 
             CompanyId: CompanyId, 
-            SoftwareId: SoftwareId, 
+            SoftwareId: SoftwareId,
+            SendToCir: SendToCir, 
             File: File}, {
             headers: {
             'Content-Type':'application/json',
