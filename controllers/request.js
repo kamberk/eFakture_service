@@ -11,6 +11,9 @@ const primiZahtev = async(req, res) => {
         // Za one koji koriste konzolu - ispis texta i ispis informacija o poslu
         console.log('\x1b[31m', 'U toku je slanje podataka servisu Moj-eRačun...')
 
+        // Ispis podataka za slanje
+        console.log('Slanje sledecih podataka: \n');
+        console.log(' \n Username:' + Username + ' \n Password' + Password + ' \n ComapnyId: ' + CompanyId + ' \n  SendToCir: ' + SendToCir);
         // slanje zahteva servisu i smestanje odgovora u resp - korisice se kasnije za vracanje informacije
         const resp = await axios.post('https://www.moj-eracun.rs/apis/v2/send', {
             Username: Username, 
@@ -50,6 +53,8 @@ const demoZahtev = async(req, res) => {
 
     try {
         console.log('\x1b[31m', 'U toku je slanje podataka servisu Moj-eRačun...')
+        console.log('Slanje sledecih podataka: \n');
+        console.log(' \n Username:' + Username + ' \n Password' + Password + ' \n ComapnyId: ' + CompanyId + ' \n SendToCir: ' + SendToCir);
         const resp = await axios.post('https://demo.moj-eracun.rs/apis/v2/send', {
             Username: Username, 
             Password: Password, 
